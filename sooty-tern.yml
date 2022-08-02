@@ -1,0 +1,9 @@
+name: sooty-tern
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.5
+  - black=22.6.0
+  - beautifulsoup4=4.11.1
+  - lxml=4.9.1
+  - pandas=1.4.3
