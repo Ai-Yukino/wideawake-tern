@@ -14,7 +14,6 @@ Volcanoes 🌋
 - [Global Volcanism Program](https://volcano.si.edu/)
   - [Holocene Volcano List](https://volcano.si.edu/volcanolist_holocene.cfm)
   - [Pleistocene Volano List](https://volcano.si.edu/volcanolist_pleistocene.cfm)
-- [DuckDB](https://duckdb.org/)
 
 ## 🌸 References
 
