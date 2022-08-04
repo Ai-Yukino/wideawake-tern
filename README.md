@@ -2,9 +2,6 @@
 
 Volcanoes 🌋
 
-- Map of volcanoes
-  - [Leaflet](https://leafletjs.com/)
-  - [SvelteKit](https://kit.svelte.dev/)
 - Eruption timeline
 
 ---
@@ -19,3 +16,4 @@ Volcanoes 🌋
 
 - [The Good Research Code Handbook](https://goodresearch.dev/)
 - [unittest | Python docs](https://docs.python.org/3/library/unittest.html)
+- [DuckDB](https://duckdb.org/)
