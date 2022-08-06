@@ -1,6 +1,7 @@
 # 🐍 Python standard library
 import unittest
 import os.path
+from itertools import chain
 
 # 🐍 External libraries
 from pandas.testing import assert_frame_equal
@@ -13,11 +14,15 @@ import pandas as pd
 class TestDataWithPandas(unittest.TestCase):
     def setUp(self):
         path = os.path.join("..", "..", "data", "holocene_hub", "data.tsv")
-        self.df = pd.read_csv(path, sep="\t").sort_values(by="name")
+        self.df = pd.read_csv(path, sep="\t")
+
+        self.num_rows = 1337
 
     def test_head_tail(self):
         path = os.path.join("samples", "head_tail.tsv")
-        df = pd.read_csv(path, sep="\t").sort_values(by="name")
+        df = pd.read_csv(path, sep="\t").set_index(
+            chain(range(0, 5), range(self.num_rows - 5, self.num_rows))
+        )
 
         head_difference = assert_frame_equal(df.head(), self.df.head())
         self.assertEqual(head_difference, None)
