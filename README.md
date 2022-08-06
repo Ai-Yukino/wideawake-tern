@@ -6,13 +6,35 @@ Volcanoes 🌋
 
 ---
 
-## ❄ Data
+## ❄ Environment setup
+
+Clone this repo and navigate to `sooty-tern/py`. Run
+
+```
+conda env create -f sooty-term.yml
+```
+
+to install the conda virtual environment. Activate it with
+
+```
+conda activate sooty-tern
+```
+
+Next, run
+
+```
+pip install -e .
+```
+
+to install the local `py/src` module. See [here](https://goodresearch.dev/setup.html#pip-install-your-package) for more details.
+
+## 🌸 Data
 
 - [Global Volcanism Program](https://volcano.si.edu/)
   - [Holocene Volcano List](https://volcano.si.edu/volcanolist_holocene.cfm)
   - [Pleistocene Volano List](https://volcano.si.edu/volcanolist_pleistocene.cfm)
 
-## 🌸 References
+## ❄ References
 
 - [The Good Research Code Handbook](https://goodresearch.dev/)
 - [unittest | Python docs](https://docs.python.org/3/library/unittest.html)
