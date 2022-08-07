@@ -42,3 +42,4 @@ to install the local `py/src` module. See [here](https://goodresearch.dev/setup.
 - [pandas.testing.assert_frame_equal | pandas docs](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.testing.assert_frame_equal.html)
 - [Check if pandas dataframe is subset of other dataframe | stack overflow](https://stackoverflow.com/a/49531052)
 - [open() | Python docs](https://docs.python.org/3/library/functions.html#open)
+- [Beautiful Soup docs](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
