@@ -43,3 +43,4 @@ to install the local `py/src` module. See [here](https://goodresearch.dev/setup.
 - [Check if pandas dataframe is subset of other dataframe | stack overflow](https://stackoverflow.com/a/49531052)
 - [open() | Python docs](https://docs.python.org/3/library/functions.html#open)
 - [Beautiful Soup docs](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Build a list of list efficiently in python](https://stackoverflow.com/questions/23040784/build-a-list-of-list-efficiently-in-python)
