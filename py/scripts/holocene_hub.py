@@ -1,5 +1,6 @@
 # 🐍 Python standard library
 import os.path
+import re
 
 # 🐍 External libaries
 from bs4 import BeautifulSoup, SoupStrainer
@@ -36,3 +37,4 @@ urls = [
 ]
 
 ## ❄ Extract "volcano_number" column
+volcano_numbers = [int(re.search("\d{6}$", urls[i])[0]) for i in range(0, 1337)]
