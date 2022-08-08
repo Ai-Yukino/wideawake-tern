@@ -28,13 +28,16 @@ with open(html_path, "r", encoding="utf-8") as file:
     soup = BeautifulSoup(markup=file, features="lxml", parse_only=strainer)
 
 ## ❄ Get rows
-rows = soup("tr")
+rows = soup("tr")[1:]
 
-## 🌸 Extract "url" column
+## 🌸 Extract "url" and "volcano_number" column
 base_url = "https://volcano.si.edu"
-urls = [
-    os.path.join(base_url, rows[i].contents[1].a.attrs["href"]) for i in range(1, 1338)
-]
+urls = [os.path.join(base_url, row.contents[1].a.attrs["href"]) for row in rows]
 
-## ❄ Extract "volcano_number" column
-volcano_numbers = [int(re.search("\d{6}$", urls[i])[0]) for i in range(0, 1337)]
+volcano_numbers = [int(re.search("\d{6}", url)[0]) for url in urls]
+
+## ❄ Extract "name", "subregion", "volcano_type", and "evidence" column
+names = [row.contents[1].string for row in rows]
+subregions = [row.contents[3].string for row in rows]
+volcano_type = [row.contents[5].string for row in rows]
+evidence = [row.contents[7].string for row in rows]
