@@ -1,5 +1,4 @@
 # 🐍 Python standard library
-from email.mime import base
 import os
 import re
 
@@ -48,7 +47,6 @@ volcano_numbers = [int(re.search("\d{6}", url)[0]) for url in urls]
 names = [row.contents[1].string for row in rows]
 subregions = [row.contents[3].string for row in rows]
 volcano_types = [row.contents[5].string for row in rows]
-# evidences = [row.contents[7].string for row in rows]
 evidences = [
     re.compile(
         r"^ ",
