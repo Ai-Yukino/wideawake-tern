@@ -13,10 +13,10 @@ import pandas as pd
 
 class TestDataWithPandas(unittest.TestCase):
     def setUp(self):
-        path = os.path.join("..", "..", "data", "pleistocene_hub", "data.tsv")
+        path = os.path.join("..", "..", "data", "pleistocene_hub" + ".tsv")
         self.df = pd.read_csv(path, sep="\t")
 
-        self.num_rows = 1337
+        self.num_rows = 1324
 
     def test_head_tail(self):
         path = os.path.join("samples", "head_tail.tsv")
