@@ -1,3 +1,7 @@
+# Python
 *.egg-info
 data
 __pycache__
+
+# LibreOffice Calc
+*.~lock
