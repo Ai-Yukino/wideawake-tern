@@ -1,8 +1,6 @@
 # 🐍 Python standard library
-import os.path
+import os
 import re
-from turtle import home
-from wsgiref.headers import tspecials
 
 # 🐍 External libaries
 from bs4 import BeautifulSoup, SoupStrainer
@@ -16,6 +14,9 @@ html_url = "https://volcano.si.edu/volcanolist_holocene.cfm"
 html_directory = os.path.join("..", "data", "holocene_hub")
 html_filename = "hub.html"
 html_path = os.path.join(html_directory, html_filename)
+
+if os.path.exists(html_directory) == False:
+    os.makedirs(html_directory)
 
 if os.path.exists(html_path) == False:
     save_html(
