@@ -45,3 +45,4 @@ to install the local `py/src` module. See [here](https://goodresearch.dev/setup.
 - [Beautiful Soup docs](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 - [Build a list of list efficiently in python](https://stackoverflow.com/questions/23040784/build-a-list-of-list-efficiently-in-python)
 - [re | Python docs](https://docs.python.org/3/library/re.html)
+- [Spoofing IP address when web scraping (python) | stack overflow](https://stackoverflow.com/a/56654164)
