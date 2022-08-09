@@ -1,10 +1,8 @@
 # 🐍 Python standard library
 import os
-import timeit
-import csv
 
 # 🐍 External libraries
-import pandas as pd
+# None
 
 # 🐍 Local module imports
 from src.tsv import get_column
