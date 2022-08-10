@@ -10,8 +10,8 @@ from random import choices, uniform
 
 def get_delays(
     count,
-    partition=[0.008, 0.7274, 2.998, 5.126, 7.942, 10.019],
-    probabilities=[0.01, 0.08, 0.70, 0.20, 0.01],
+    partition=[0, 1, 3],
+    probabilities=[0.20, 0.80],
     verbose=False,
 ):
     delays = []
