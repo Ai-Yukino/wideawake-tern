@@ -3,7 +3,7 @@ Utilities functions for dealing with get requests in web scraping
 """
 
 # 🐍 Python standard library
-from urllib.request import urlretrieve
+from urllib.request import urlretrieve, urlcleanup
 from os.path import join
 import csv
 from random import choices, uniform
@@ -15,9 +15,10 @@ from random import choices, uniform
 # None
 
 
-def html(url, directory, filename):
+def html(url, directory, filename, timestamp=False):
     """Save a static html file"""
     urlretrieve(url, join(directory, filename))
+    urlcleanup()
 
 
 def column(path, column_index, sep="\t"):
@@ -31,7 +32,7 @@ def column(path, column_index, sep="\t"):
     return column
 
 
-def get_delays(
+def delays(
     count,
     partition=[0, 0.85, 2.25],
     probabilities=[0.60, 0.40],
