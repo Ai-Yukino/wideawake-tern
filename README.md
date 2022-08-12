@@ -47,3 +47,4 @@ to install the local `py/src` module. See [here](https://goodresearch.dev/setup.
 - [re | Python docs](https://docs.python.org/3/library/re.html)
 - [Spoofing IP address when web scraping (python) | stack overflow](https://stackoverflow.com/a/56654164)
 - [random | Python docs](https://docs.python.org/3/library/random.html)
+- [Requests docs](https://requests.readthedocs.io/en/latest/)
