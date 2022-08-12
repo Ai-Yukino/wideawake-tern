@@ -19,7 +19,7 @@ from random import choices, uniform
 # None
 
 
-def page(url, directory, filename, filename_extension=".html", timestamp=False):
+def get_page(url, directory, filename, filename_extension=".html", timestamp=False):
     """Save a single static web page"""
     if timestamp == False:
         urlretrieve(url, join(directory, filename + filename_extension))
@@ -38,19 +38,11 @@ def page(url, directory, filename, filename_extension=".html", timestamp=False):
         urlcleanup()
 
 
-page(
-    url="https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime",
-    directory=".",
-    filename="test",
-    timestamp=True,
-)
-
-
-def pages():
+def get_pages():
     pass
 
 
-def column(path, column_index, sep="\t"):
+def get_column(path, column_index, sep="\t"):
     """Get a single column from a csv file (tsv format by default)"""
     column = []
     with open(path, "r") as file:
@@ -61,7 +53,7 @@ def column(path, column_index, sep="\t"):
     return column
 
 
-def delays(
+def create_delays(
     count,
     partition=[0, 0.85, 2.25],
     probabilities=[0.60, 0.40],
