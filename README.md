@@ -48,3 +48,5 @@ to install the local `py/src` module. See [here](https://goodresearch.dev/setup.
 - [Spoofing IP address when web scraping (python) | stack overflow](https://stackoverflow.com/a/56654164)
 - [random | Python docs](https://docs.python.org/3/library/random.html)
 - [Requests docs](https://requests.readthedocs.io/en/latest/)
+- [Getting computer's UTC offset in Python | stack overflow](https://stackoverflow.com/a/3168394)
+- [Timezone Constants | Python docs](https://docs.python.org/3/library/time.html#time.timezone)
