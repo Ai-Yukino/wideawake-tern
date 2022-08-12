@@ -26,7 +26,7 @@ Next, run
 pip install -e .
 ```
 
-to install the local `py/src` module. See [here](https://goodresearch.dev/setup.html#pip-install-your-package) for more details.
+to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.html#pip-install-your-package) for more details.
 
 ## 🌸 Data
 

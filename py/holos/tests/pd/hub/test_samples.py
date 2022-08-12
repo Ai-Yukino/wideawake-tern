@@ -1,6 +1,6 @@
 # 🐍 Python standard library
 import unittest
-import os.path
+from os.path import join
 from itertools import chain
 
 # 🐍 External libraries
@@ -13,13 +13,13 @@ import pandas as pd
 
 class TestDataWithPandas(unittest.TestCase):
     def setUp(self):
-        path = os.path.join("..", "..", "data", "holocene_hub" + ".tsv")
+        path = join("..", "..", "..", "data", "holocene_hub" + ".tsv")
         self.df = pd.read_csv(path, sep="\t")
 
         self.num_rows = 1337
 
     def test_head_tail(self):
-        path = os.path.join("samples", "head_tail.tsv")
+        path = join("samples", "head_tail.tsv")
         df = pd.read_csv(path, sep="\t").set_index(
             chain(range(0, 5), range(self.num_rows - 5, self.num_rows))
         )
