@@ -5,7 +5,11 @@ Utilities functions for dealing with get requests in web scraping
 # 🐍 Python standard library
 from urllib.request import urlretrieve, urlcleanup
 from os.path import join
+from datetime import datetime
+from time import timezone
+
 import csv
+
 from random import choices, uniform
 
 # 🐍 Python standard library
@@ -15,10 +19,35 @@ from random import choices, uniform
 # None
 
 
-def html(url, directory, filename, timestamp=False):
-    """Save a static html file"""
-    urlretrieve(url, join(directory, filename))
-    urlcleanup()
+def page(url, directory, filename, filename_extension=".html", timestamp=False):
+    """Save a single static web page"""
+    if timestamp == False:
+        urlretrieve(url, join(directory, filename + filename_extension))
+        urlcleanup()
+    elif timestamp == True:
+        urlretrieve(
+            url,
+            join(
+                directory,
+                filename
+                + datetime.now().strftime("_%Y%m%d_%H%M%S")
+                + f"_{(timezone / 3600.00):.0f}"
+                + filename_extension,
+            ),
+        )
+        urlcleanup()
+
+
+page(
+    url="https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime",
+    directory=".",
+    filename="test",
+    timestamp=True,
+)
+
+
+def pages():
+    pass
 
 
 def column(path, column_index, sep="\t"):
