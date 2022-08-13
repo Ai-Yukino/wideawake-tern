@@ -12,7 +12,7 @@ from ai.get import get_page
 
 # ❄ Create base variables
 base_url = "https://volcano.si.edu"
-base_name = "pleistocene_hub"
+base_name = "hub"
 
 # 🌸 Create data directory
 data_directory = join("..", "data")

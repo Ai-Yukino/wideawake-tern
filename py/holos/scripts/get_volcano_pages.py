@@ -21,5 +21,5 @@ if exists(html_directory) == False:
 # 🌸 Create filenames for html files
 html_filenames = [search(r"\d{6}", url)[0] for url in urls]
 
-# ❄ Get volano pages
+# ❄ Get volcano pages
 get_pages(urls=urls, directory=html_directory, filenames=html_filenames)
