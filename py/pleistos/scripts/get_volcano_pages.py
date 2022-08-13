@@ -22,10 +22,4 @@ if exists(html_directory) == False:
 html_filenames = [search(r"\d{6}", url)[0] for url in urls]
 
 # ❄ Get volcano pages
-get_pages(
-    urls=urls,
-    directory=html_directory,
-    filenames=html_filenames,
-    sample_size=10,
-    sample_seed="isekaijoucho",
-)
+get_pages(urls=urls, directory=html_directory, filenames=html_filenames)
