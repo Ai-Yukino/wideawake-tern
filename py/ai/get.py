@@ -6,14 +6,16 @@ Utilities functions for dealing with get requests in web scraping
 from urllib.request import urlretrieve, urlcleanup
 from os.path import join
 from datetime import datetime
-from time import timezone
+from time import timezone, time
 
 import csv
 
-from random import choices, uniform
+from random import choices, uniform, seed
+
+from re import search
 
 # 🐍 Python standard library
-# None
+import requests
 
 # 🐍 Python standard library
 # None
@@ -21,29 +23,12 @@ from random import choices, uniform
 
 def get_page(url, directory, filename, filename_extension=".html", timestamp=False):
     """Save a single static web page"""
-    if timestamp == False:
-        urlretrieve(url, join(directory, filename + filename_extension))
-        urlcleanup()
-    elif timestamp == True:
-        urlretrieve(
-            url,
-            join(
-                directory,
-                filename
-                + datetime.now().strftime("_%Y%m%d_%H%M%S")
-                + f"_{(timezone / 3600.00):.0f}"
-                + filename_extension,
-            ),
-        )
-        urlcleanup()
-
-
-def get_pages():
-    pass
+    urlretrieve(url, join(directory, filename + filename_extension))
+    urlcleanup()
 
 
 def get_column(path, column_index, sep="\t"):
-    """Get a single column from a csv file (tsv format by default)"""
+    """Get a single column from a csv file ignoring the header row (tsv format by default)"""
     column = []
     with open(path, "r") as file:
         table = csv.reader(file, delimiter=sep)
@@ -53,24 +38,23 @@ def get_column(path, column_index, sep="\t"):
     return column
 
 
-def create_delays(
-    count,
-    partition=[0, 0.85, 2.25],
-    probabilities=[0.60, 0.40],
-    verbose=False,
-):
-    """Generate a random list of delay times"""
-    delays = []
+script_start = time()
 
-    indices = choices(range(0, len(partition) - 1), weights=probabilities, k=count)
+data_path = join("..", "holos", "data", "holocene_hub.tsv")
 
-    for index in indices:
-        delays.append(uniform(partition[index], partition[index + 1]))
+urls = get_column(path=data_path, column_index=1)
+seed("ara ara")
+urls = choices(urls, k=10)
 
-    if verbose == True:
-        for index, delay in zip(indices, delays):
-            print(f"index: {index}")
-            print(f"interval: ({partition[index]}, {partition[index + 1]})")
-            print(f"delay: {delay}")
+with requests.Session() as s:
+    for url in urls:
+        start = time()
+        r = s.get(url)
+        path = join(".", str(search(r"\d{6}", url)[0]) + ".html")
+        with open(path, "x") as file:
+            file.write(r.text)
+        end = time()
+        print(f"Total iteration time: {end - start}")
 
-    return delays
+script_end = time()
+print(f"Total script time: {script_end - script_start}")
