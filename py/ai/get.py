@@ -18,8 +18,16 @@ import requests
 
 def get_page(url, directory, filename, filename_extension=".html"):
     """Save a single static web page"""
+    start = time()
+
     urlretrieve(url, join(directory, filename + filename_extension))
     urlcleanup()
+    
+    end = time()
+    print("\n---")
+    print(f"url: {url}")
+    print(f"get_page() ran for {end - start} seconds")
+    print("---")
 
 
 def get_pages(
