@@ -27,15 +27,13 @@ def get_pages(
     directory,
     filenames,
     filename_extension=".html",
-    sample_size=None,
+    sample_size=-1,
     sample_seed="uwu",
 ):
     "Same multiple static web pages"
     function_start = time()
 
-    print(f"{(type(sample_size) is int) & (0 < sample_size < len(urls))}")
-
-    if (type(sample_size) is int) & (0 < sample_size < len(urls)):
+    if 0 < sample_size < len(urls):
         seed(sample_seed)
         sample_indices = choices(range(0, len(urls)), k=sample_size)
         urls = [urls[index] for index in sample_indices]
