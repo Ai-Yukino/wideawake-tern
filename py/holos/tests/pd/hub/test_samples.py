@@ -13,7 +13,7 @@ import pandas as pd
 
 class TestDataWithPandas(unittest.TestCase):
     def setUp(self):
-        path = join("..", "..", "..", "data", "holocene_hub" + ".tsv")
+        path = join("..", "..", "..", "data", "hub" + ".tsv")
         self.df = pd.read_csv(path, sep="\t")
 
         self.num_rows = 1337
