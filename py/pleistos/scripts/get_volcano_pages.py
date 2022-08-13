@@ -1,44 +1,31 @@
 # 🐍 Python standard library
 from os.path import join, exists
 from os import makedirs
-from time import time, sleep
 from re import search
 
 # 🐍 External libraries
 # None
 
 # 🐍 Local module imports
-from src.tsv import get_column
-from src.delay import get_delays
-from src.html import save_html
+from ai.get import get_column, get_pages
 
-# ❄ Start tracking script time
-program_start = time()
-
-# 🌸 Get urls of pleistocene volcanoes
-tsv_path = join("..", "data", "pleistocene_hub" + ".tsv")
+# 🌸 Get urls of volcanoes
+tsv_path = join("..", "data", "hub" + ".tsv")
 urls = get_column(path=tsv_path, column_index=1)
 
 # ❄ Create html output directory
-html_directory = join("..", "data", "pleistocene_pages")
+html_directory = join("..", "data", "volcanoe_pages")
 if exists(html_directory) == False:
     makedirs(html_directory)
 
-# 🌸 Create random delays for each get request
-delays = get_delays(len(urls), partition=[0, 1, 2], probabilities=[0.5, 0.5])
+# 🌸 Create filenames for html files
+html_filenames = [search(r"\d{6}", url)[0] for url in urls]
 
-# ❄ Request and save each page for the pleistocene volcanoes
-for url, delay in zip(urls, delays):
-    start = time()
-    sleep(delay)
-    save_html(
-        url=url, directory=html_directory, filename=search(r"\d{6}", url)[0] + ".html"
-    )
-    stop = time()
-
-    print(f"Delay: {delay}")
-    print(f"Total iteration time: {stop - start}\n")
-
-# 🌸 Output total script time
-program_stop = time()
-print(f"Total program time: {program_stop - program_start}")
+# ❄ Get volcano pages
+get_pages(
+    urls=urls,
+    directory=html_directory,
+    filenames=html_filenames,
+    sample_size=10,
+    sample_seed="isekaijoucho",
+)
