@@ -7,6 +7,7 @@ from urllib.request import urlretrieve, urlcleanup
 from os.path import join
 from time import time
 import csv
+from random import choices, seed
 
 # 🐍 Python standard library
 import requests
@@ -21,9 +22,22 @@ def get_page(url, directory, filename, filename_extension=".html"):
     urlcleanup()
 
 
-def get_pages(urls, directory, filenames, filename_extension=".html"):
+def get_pages(
+    urls,
+    directory,
+    filenames,
+    filename_extension=".html",
+    sample_size=None,
+    sample_seed="uwu",
+):
     "Same multiple static web pages"
     function_start = time()
+
+    if sample_size < len(urls):
+        seed(sample_seed)
+        sample_indices = choices(range(0, len(urls)), k=sample_size)
+        urls = [urls[index] for index in sample_indices]
+        filenames = [filenames[index] for index in sample_indices]
 
     with requests.Session() as s:
         i = 1
@@ -56,4 +70,3 @@ def get_column(path, column_index, sep="\t"):
         for row in table:
             column.append(row[column_index])
     return column
-
