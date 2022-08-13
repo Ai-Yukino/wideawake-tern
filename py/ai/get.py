@@ -33,7 +33,9 @@ def get_pages(
     "Same multiple static web pages"
     function_start = time()
 
-    if (sample_size is int) and (0 < sample_size < len(urls)):
+    print(f"{(type(sample_size) is int) & (0 < sample_size < len(urls))}")
+
+    if (type(sample_size) is int) & (0 < sample_size < len(urls)):
         seed(sample_seed)
         sample_indices = choices(range(0, len(urls)), k=sample_size)
         urls = [urls[index] for index in sample_indices]
