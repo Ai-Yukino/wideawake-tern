@@ -1,9 +1,6 @@
 # 🐍 Python standard library
 from os.path import join, exists
 from os import makedirs
-
-from random import seed, choices
-
 from re import search
 
 # 🐍 External libraries
@@ -12,7 +9,7 @@ from re import search
 # 🐍 Local module imports
 from ai.get import get_column, get_pages
 
-# 🌸 Get urls of holocene volcanoes
+# 🌸 Get urls of volcanoes
 tsv_path = join("..", "data", "hub" + ".tsv")
 urls = get_column(path=tsv_path, column_index=1)
 
@@ -23,3 +20,6 @@ if exists(html_directory) == False:
 
 # 🌸 Create filenames for html files
 html_filenames = [search(r"\d{6}", url)[0] for url in urls]
+
+# ❄ Get volano pages
+get_pages(urls=urls, directory=html_directory, filenames=html_filenames)
