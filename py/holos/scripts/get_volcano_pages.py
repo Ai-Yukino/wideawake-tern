@@ -21,11 +21,5 @@ html_directory = join("..", "data", "volcanoe_pages")
 if exists(html_directory) == False:
     makedirs(html_directory)
 
-# 🌸 Test example
-
-seed("hole-dwelling")
-test_urls = choices(urls, k=10)
-
-html_filenames = [search(r"\d{6}", url)[0] for url in test_urls]
-
-get_pages(urls=test_urls, directory=html_directory, filenames=html_filenames)
+# 🌸 Create filenames for html files
+html_filenames = [search(r"\d{6}", url)[0] for url in urls]
