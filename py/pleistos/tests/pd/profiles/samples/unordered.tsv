@@ -1,1 +1,21 @@
-volcano_number	name	country	primary_volcano_type	last_known_eruption	latitude	longitude	summit_elevation	citation_url
+volcano_number	name	country	primary_volcano_type	last_known_eruption	latitude	longitude	summit_elevation_meters	summit_elevation_feet
+341802	El Aguajito	Mexico	Caldera	Pleistocene	27.554°N	112.552°W	1274	4180
+285802	Zenikame	Japan	Submarine	Pleistocene	41.737°N	140.855°E	-30	-98
+283810	Tsuruta	Japan	Pyroclastic cone(s)	Pleistocene	35.338°N	133.422°E	301	988
+283874	Adachi	Japan	Pyroclastic cone	Pleistocene	38.218°N	140.654°E	Unknown	Unknown
+343821	Cerro Calanterique	Honduras	Lava cone	Pleistocene	14.6°N	87.87°W	Unknown	Unknown
+259806	Chudleigh Volcanic Province	Australia	Shield(s)	Pleistocene	19.73°S	144.2°E	1000	3281
+214808	Dzau	Georgia	Fissure vent	Pleistocene	42.404°N	44.004°E	1904	6247
+323090	Eagle Lake Field	United States	Fissure vent(s)	Pleistocene	40.63°N	120.83°W	1652	5420
+373808	Gaesafjöll	Iceland	Tuya	Pleistocene	65.775°N	16.88°W	882	2894
+268800	Hamiding	Indonesia	Unknown	Pleistocene	1.62°N	127.82°E	1204	3950
+371804	Hlödufell	Iceland	Tuya	Pleistocene	64.93°N	20.53°W	1188	3898
+355870	Incapillo	Argentina	Caldera	Pleistocene	27.9°S	68.8°W	5750	18865
+327811	Jornada del Muerto	United States	Shield	Pleistocene	33.53°N	106.87°W	1555	5102
+263809	Kaledong	Indonesia	Lava dome	Pleistocene	7.053°S	107.908°E	1235	4052
+300865	Nachikinsky	Russia	Unknown	Pleistocene	57.83°N	162.68°E	1211	3973
+351001	San Diego	Colombia	Maar	Pleistocene	5.65°N	74.961°W	1163	3816
+390819	Taylor Valley	Antarctica	Pyroclastic cone(s)	Pleistocene	77.748°S	161.526°E	1489	4885
+243018	Unnamed	Tonga	Submarine	Pleistocene	22.846°S	176.43°W	-39	-128
+243009	Unnamed	Tonga	Submarine	Pleistocene	21.804°S	175.941°W	-800	-2625
+261803	Geureugoh	Indonesia	Fissure vent(s)	Pleistocene	5.15°N	96.67°E	Unknown	Unknown
