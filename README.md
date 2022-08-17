@@ -36,17 +36,31 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 
 ## ❄ References
 
+### Folder structure
+
 - [The Good Research Code Handbook](https://goodresearch.dev/)
-- [unittest | Python docs](https://docs.python.org/3/library/unittest.html)
-- [DuckDB](https://duckdb.org/)
-- [pandas.testing.assert_frame_equal | pandas docs](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.testing.assert_frame_equal.html)
-- [Check if pandas dataframe is subset of other dataframe | stack overflow](https://stackoverflow.com/a/49531052)
-- [open() | Python docs](https://docs.python.org/3/library/functions.html#open)
-- [Beautiful Soup docs](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+
+### Python docs
+
+- [unittest](https://docs.python.org/3/library/unittest.html)
+- [open()](https://docs.python.org/3/library/functions.html#open)
+- [random](https://docs.python.org/3/library/random.html)
+- [re](https://docs.python.org/3/library/re.html)
+- [Timezone Constants](https://docs.python.org/3/library/time.html#time.timezone)
+
+### Pandas docs
+
+- [pandas.testing.assert_frame_equal](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.testing.assert_frame_equal.html)
+
+### Stack Overflow
+
 - [Build a list of list efficiently in python](https://stackoverflow.com/questions/23040784/build-a-list-of-list-efficiently-in-python)
-- [re | Python docs](https://docs.python.org/3/library/re.html)
-- [Spoofing IP address when web scraping (python) | stack overflow](https://stackoverflow.com/a/56654164)
-- [random | Python docs](https://docs.python.org/3/library/random.html)
-- [Requests docs](https://requests.readthedocs.io/en/latest/)
-- [Getting computer's UTC offset in Python | stack overflow](https://stackoverflow.com/a/3168394)
-- [Timezone Constants | Python docs](https://docs.python.org/3/library/time.html#time.timezone)
+- [Check if pandas dataframe is subset of other dataframe](https://stackoverflow.com/a/49531052)
+- [Spoofing IP address when web scraping (python)](https://stackoverflow.com/a/56654164)
+- [Getting computer's UTC offset in Python](https://stackoverflow.com/a/3168394)
+
+### Miscellaneous
+
+- [DuckDB](https://duckdb.org/)
+- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Requests](https://requests.readthedocs.io/en/latest/)
