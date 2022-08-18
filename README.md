@@ -48,6 +48,10 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 - [re](https://docs.python.org/3/library/re.html)
 - [Timezone Constants](https://docs.python.org/3/library/time.html#time.timezone)
 
+### Polars docs
+
+-[Column assignment](https://pola-rs.github.io/polars-book/user-guide/coming_from_pandas.html#column-assignment)
+
 ### Pandas docs
 
 - [pandas.testing.assert_frame_equal](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.testing.assert_frame_equal.html)
