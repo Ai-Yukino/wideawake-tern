@@ -64,3 +64,4 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 - [DuckDB](https://duckdb.org/)
 - [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 - [Requests](https://requests.readthedocs.io/en/latest/)
+- [Polars](https://www.pola.rs/)
