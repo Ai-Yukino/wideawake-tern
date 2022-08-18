@@ -14,7 +14,7 @@ tsv_path = join("..", "data", "hub" + ".tsv")
 urls = get_column(path=tsv_path, column_index=1)
 
 # ❄ Create html output directory
-html_directory = join("..", "data", "volcanoe_pages")
+html_directory = join("..", "data", "volcano_pages")
 if exists(html_directory) == False:
     makedirs(html_directory)
 
