@@ -71,4 +71,5 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 
 - [numba](https://calmcode.io/numba/introduction.html)
 - [pandas pipe](https://calmcode.io/pandas-pipe/introduction.html)
+- [decorators](https://calmcode.io/decorators/introduction.html)
 - [polars](https://calmcode.io/polars/introduction.html)
