@@ -11,7 +11,7 @@ import pandas as pd
 # None
 
 
-class TestDataWithPandas(unittest.TestCase):
+class TestSample(unittest.TestCase):
     def setUp(self):
         path = join("..", "..", "..", "data", "hub" + ".tsv")
         self.df = pd.read_csv(path, sep="\t")
