@@ -56,6 +56,10 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 
 - [pandas.testing.assert_frame_equal](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.testing.assert_frame_equal.html)
 
+### mdn web docs
+
+- [CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+
 ### Stack Overflow
 
 - [Build a list of list efficiently in python](https://stackoverflow.com/questions/23040784/build-a-list-of-list-efficiently-in-python)
