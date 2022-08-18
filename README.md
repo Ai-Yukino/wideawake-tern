@@ -65,18 +65,7 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 - [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 - [Requests](https://requests.readthedocs.io/en/latest/)
 
-## 🌸 Reading list
-
-### Modern pandas by Tom Augspurger
-
-- [Part 1](https://tomaugspurger.github.io/modern-1-intro.html)
-- [Part 2](https://tomaugspurger.github.io/method-chaining.html)
-- [Part 3](https://tomaugspurger.github.io/modern-3-indexes.html)
-- [Part 4](https://tomaugspurger.github.io/modern-4-performance.html)
-- [Part 5](https://tomaugspurger.github.io/modern-5-tidy.html)
-- [Part 6](https://tomaugspurger.github.io/modern-6-visualization.html)
-- [Part 7](https://tomaugspurger.github.io/modern-7-timeseries.html)
-- [Part 8](https://tomaugspurger.github.io/modern-8-scaling.html)
+## 🌸 Learning resources
 
 ### Calm code videos
 
