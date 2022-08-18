@@ -50,7 +50,7 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 
 ### Polars docs
 
--[Column assignment](https://pola-rs.github.io/polars-book/user-guide/coming_from_pandas.html#column-assignment)
+- [Column assignment](https://pola-rs.github.io/polars-book/user-guide/coming_from_pandas.html#column-assignment)
 
 ### Pandas docs
 
