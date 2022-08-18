@@ -1,4 +1,4 @@
-# 🐍 Standard python library
+# 🐍 Python standard library
 import unittest
 from os.path import join
 
