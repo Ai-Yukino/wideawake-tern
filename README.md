@@ -54,6 +54,7 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 
 - [API reference](https://pola-rs.github.io/polars/py-polars/html/reference/index.html)
   - [Testing](https://pola-rs.github.io/polars/py-polars/html/reference/testing.html)
+  - [polars.DataFrame](https://pola-rs.github.io/polars/py-polars/html/reference/api/polars.DataFrame.html#polars.DataFrame)
 - [User guide](https://pola-rs.github.io/polars-book/user-guide/)
   - [CSV files](https://pola-rs.github.io/polars-book/user-guide/howcani/io/csv.html)
   - [Join](https://pola-rs.github.io/polars-book/user-guide/howcani/combining_data/joining.html)
