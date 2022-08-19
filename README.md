@@ -54,7 +54,7 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 
 ### Pandas docs
 
-- [pandas.testing.assert_frame_equal](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.testing.assert_frame_equal.html)
+- [Examples](https://pola-rs.github.io/polars-book/user-guide/notebooks/introduction_polars.html)
 
 ### mdn web docs
 
