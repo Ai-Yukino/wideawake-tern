@@ -1,7 +1,8 @@
 # 🐍 Python standard library
 from os.path import join
 from glob import glob
-from random import seed, choices
+
+# from random import seed, choices
 from re import search
 
 # 🐍 External libraries
@@ -12,8 +13,9 @@ import polars as pl
 # None
 
 paths = glob(join("..", "data", "volcano_pages", "*"))
-seed("Blooming in the mud by Wolpis Carter")
-test_paths = choices(paths, k=9)
+# seed("Blooming in the mud by Wolpis Carter")
+
+# test_paths = choices(paths, k=1000)
 
 volcano_numbers = []
 names = []
@@ -24,6 +26,9 @@ latitudes = []
 longitudes = []
 summit_elevations_meters = []
 summit_elevations_feet = []
+
+# "../data/volcano_pages/243061.html"
+test_paths = [join("..", "data", "volcano_pages", "355130.html")]
 
 for path in test_paths:
     with open(path, "r") as file:
@@ -66,4 +71,6 @@ dictionary = {
 
 df = pl.DataFrame(dictionary)
 path = join("..", "data", "profiles.tsv")
-df.write_csv(path, sep="\t")
+
+test_path = join("..", "data", "test_profiles.tsv")
+df.write_csv(test_path, sep="\t")
