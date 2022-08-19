@@ -51,11 +51,8 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 
 ### Polars docs
 
-- [Examples](https://pola-rs.github.io/polars-book/user-guide/notebooks/introduction_polars.html)
-
-### Pandas docs
-
-- [pandas.testing.assert_frame_equal](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.testing.assert_frame_equal.html)
+- [Testing](https://pola-rs.github.io/polars/py-polars/html/reference/testing.html)
+- [API reference](https://pola-rs.github.io/polars/py-polars/html/reference/index.html)
 
 ### mdn web docs
 
@@ -65,7 +62,6 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 
 - [Build a list of list efficiently in python](https://stackoverflow.com/questions/23040784/build-a-list-of-list-efficiently-in-python)
 - [Check if pandas dataframe is subset of other dataframe](https://stackoverflow.com/a/49531052)
-- [Spoofing IP address when web scraping (python)](https://stackoverflow.com/a/56654164)
 - [Getting computer's UTC offset in Python](https://stackoverflow.com/a/3168394)
 
 ### Miscellaneous
