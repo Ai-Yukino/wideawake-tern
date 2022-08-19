@@ -22,7 +22,7 @@ def get_page(url, directory, filename, filename_extension=".html"):
 
     urlretrieve(url, join(directory, filename + filename_extension))
     urlcleanup()
-    
+
     end = time()
     print("\n---")
     print(f"url: {url}")
