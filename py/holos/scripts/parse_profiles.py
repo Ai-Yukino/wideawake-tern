@@ -13,7 +13,7 @@ import polars as pl
 
 paths = glob(join("..", "data", "volcano_pages", "*"))
 seed("Blooming in the mud by Wolpis Carter")
-test_paths = choices(paths, k=5)
+test_paths = choices(paths, k=9)
 
 volcano_numbers = []
 names = []
@@ -41,7 +41,7 @@ for path in test_paths:
         li_tags = soup.select("div.volcano-info-table > ul")[0]("li")
         countries.append(str(li_tags[0].string))
         primary_volcano_types.append(str(li_tags[1].string))
-        last_known_eruptions.append(int(search("^\d+", str(li_tags[2].string))[0]))
+        last_known_eruptions.append(str(li_tags[2].string))
 
         li_tags = soup.select("div.volcano-subinfo-table > ul")[0]("li")
         latitudes.append(str(li_tags[0].string))
