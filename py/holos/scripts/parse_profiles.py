@@ -12,8 +12,8 @@ import polars as pl
 # None
 
 paths = glob(join("..", "data", "volcano_pages", "*"))
-seed("Blooming in the mud by Wolpis Carter uwu")
-test_paths = choices(paths, k=1)
+seed("Blooming in the mud by Wolpis Carter")
+test_paths = choices(paths, k=10)
 
 volcano_numbers = []
 names = []
