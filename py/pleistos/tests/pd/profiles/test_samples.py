@@ -18,3 +18,6 @@ class TestDataWithPandas(unittest.TestCase):
         path = join("samples", "unordered.tsv")
         df = pd.read_csv(path, sep="\t")
         self.assertTrue(assert_rows_subset(df, self.df))
+
+if __name__ == "__main__":
+    unittest.main()
