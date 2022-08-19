@@ -33,6 +33,7 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 - [Global Volcanism Program](https://volcano.si.edu/)
   - [Holocene Volcano List](https://volcano.si.edu/volcanolist_holocene.cfm)
   - [Pleistocene Volano List](https://volcano.si.edu/volcanolist_pleistocene.cfm)
+  - [Database updates](https://volcano.si.edu/gvp_votw.cfm#log)
 
 ## ❄ References
 
