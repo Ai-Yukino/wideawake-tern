@@ -43,16 +43,19 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 
 ### Python docs
 
-- [unittest](https://docs.python.org/3/library/unittest.html)
-- [open()](https://docs.python.org/3/library/functions.html#open)
-- [random](https://docs.python.org/3/library/random.html)
-- [re](https://docs.python.org/3/library/re.html)
-- [Timezone Constants](https://docs.python.org/3/library/time.html#time.timezone)
+- [The Python Standard Library](https://docs.python.org/3/library/index.html)
+  - [unittest](https://docs.python.org/3/library/unittest.html)
+  - [open()](https://docs.python.org/3/library/functions.html#open)
+  - [random](https://docs.python.org/3/library/random.html)
+  - [re](https://docs.python.org/3/library/re.html)
+  - [Timezone Constants](https://docs.python.org/3/library/time.html#time.timezone)
 
 ### Polars docs
 
-- [Testing](https://pola-rs.github.io/polars/py-polars/html/reference/testing.html)
 - [API reference](https://pola-rs.github.io/polars/py-polars/html/reference/index.html)
+  - [Testing](https://pola-rs.github.io/polars/py-polars/html/reference/testing.html)
+- [User guide](https://pola-rs.github.io/polars-book/user-guide/)
+  - [CSV files](https://pola-rs.github.io/polars-book/user-guide/howcani/io/csv.html)
 
 ### mdn web docs
 
