@@ -13,7 +13,7 @@ import polars as pl
 
 paths = glob(join("..", "data", "volcano_pages", "*"))
 seed("Blooming in the mud by Wolpis Carter")
-test_paths = choices(paths, k=10)
+test_paths = choices(paths, k=5)
 
 volcano_numbers = []
 names = []
@@ -49,8 +49,8 @@ for path in test_paths:
         volcano_numbers.append(int(li_tags[5].string))
 
         elevations = [string for string in li_tags[3].strings]
-        summit_elevations_meters.append(int(search("^\d+", elevations[0])[0]))
-        summit_elevations_feet.append(int(search("^\d+", elevations[1])[0]))
+        summit_elevations_meters.append(int(search("^-*\d+", elevations[0])[0]))
+        summit_elevations_feet.append(int(search("^-*\d+", elevations[1])[0]))
 
 dictionary = {
     "volcano_number": volcano_numbers,
