@@ -79,3 +79,4 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 - [scraper](https://docs.rs/scraper/latest/scraper/)
 - [calmcode.io](https://calmcode.io)
   - [decorators](https://calmcode.io/decorators/introduction.html)
+  - [\*args \*\*kwargs](https://calmcode.io/args-kwargs/introduction.html)
