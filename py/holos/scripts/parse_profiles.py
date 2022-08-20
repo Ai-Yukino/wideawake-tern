@@ -3,8 +3,6 @@ from os.path import join
 from glob import glob
 from re import search
 
-# from random import seed, choices
-
 # 🐍 External libraries
 from bs4 import BeautifulSoup, SoupStrainer
 import polars as pl
@@ -13,9 +11,6 @@ import polars as pl
 # None
 
 paths = glob(join("..", "data", "volcano_pages", "*"))
-
-# seed("Blooming in the mud by Wolpis Carter")
-# test_paths = choices(paths, k=20)
 
 volcano_numbers = []
 names = []
@@ -73,6 +68,3 @@ df = pl.DataFrame(dictionary)
 
 path = join("..", "data", "profiles.tsv")
 df.write_csv(path, sep="\t")
-
-# if __name__ == "__main__":
-#     print("hewo")
