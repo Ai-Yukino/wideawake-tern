@@ -49,6 +49,7 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
   - [random](https://docs.python.org/3/library/random.html)
   - [re](https://docs.python.org/3/library/re.html)
   - [Timezone Constants](https://docs.python.org/3/library/time.html#time.timezone)
+  - [Function definitions](https://docs.python.org/3/reference/compound_stmts.html#function)
 
 ### Polars docs
 
