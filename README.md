@@ -76,3 +76,5 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 - [Requests](https://requests.readthedocs.io/en/latest/)
 - [Polars](https://www.pola.rs/)
 - [scraper](https://docs.rs/scraper/latest/scraper/)
+- [calmcode.io](https://calmcode.io)
+  - [decorators](https://calmcode.io/decorators/introduction.html)
