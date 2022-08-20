@@ -5,7 +5,7 @@ from re import search
 
 # 🐍 External libaries
 from bs4 import BeautifulSoup, SoupStrainer
-import pandas as pd
+import polars as pl
 
 # 🐍 Local module imports
 from ai.get import get_page
@@ -57,9 +57,9 @@ dictionary = {
     "subregion": subregions,
     "volcano_type": volcano_types,
 }
-df = pd.DataFrame(dictionary)
+df = pl.DataFrame(dictionary)
 
 tsv_path = join(data_directory, base_name + ".tsv")
 
 if exists(tsv_path) == False:
-    df.to_csv(tsv_path, sep="\t", index=False)
+    df.write_csv(tsv_path, sep="\t")
