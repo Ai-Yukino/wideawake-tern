@@ -1,28 +1,33 @@
 """
-Utilities functions to help with unit tests using pandas
+Utilities functions to assist with unit tests
 """
 
 # 🐍 Python standard library
 # None
 
 # 🐍 External libraries
-# import pandas as pd
 import polars as pl
+from polars.testing import assert_frame_equal
 
 # 🐍 Local module imports
 # None
 
-def assert_rows_subset(subset, superset):
-    pass
 
-# def assert_rows_subset(subset, superset):
-#     """
-#     Checks if the set of rows of one DataFrame
-#     are a subset of another DataFrame's set of rows.
-#     """
-#     subset = subset.drop_duplicates()
-#     superset = superset.drop_duplicates()
-#     if subset.shape[1] != superset.shape[1]:
-#         return False
-#     else:
-#         return subset.merge(superset).shape == subset.shape
+def assert_frame_subset(left, right) -> None:
+    """
+    Raise detailed AssertionError if `left` is not a subset of `right`.
+
+    Parameters
+    ----------
+    subset
+        the supposed subset dataframe
+    superset
+        the supposed superset dataframe
+    """
+
+    assert_frame_equal(
+        left.join(right, on=left.columns, how="anti"),
+        pl.DataFrame(
+            columns=[(name, t) for (name, t) in zip(left.columns, left.dtypes)]
+        ).lazy(),
+    )
