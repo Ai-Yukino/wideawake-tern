@@ -15,7 +15,7 @@ class TestHub(unittest.TestCase):
         self.sample = pl.scan_csv(join("samples", "hub.tsv"), sep="\t")
 
     def test_shape(self):
-        self.assertEqual(self.hub.shape, (1331, 6))
+        self.assertEqual(self.hub.collect().shape, (1331, 6))
 
     def test_subset(self):
         self.assertEqual(assert_frame_subset(self.sample, self.hub), None)
