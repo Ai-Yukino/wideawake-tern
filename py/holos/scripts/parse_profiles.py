@@ -1,9 +1,9 @@
 # 🐍 Python standard library
 from os.path import join
 from glob import glob
+from re import search
 
 # from random import seed, choices
-from re import search
 
 # 🐍 External libraries
 from bs4 import BeautifulSoup, SoupStrainer
@@ -13,9 +13,9 @@ import polars as pl
 # None
 
 paths = glob(join("..", "data", "volcano_pages", "*"))
-# seed("Blooming in the mud by Wolpis Carter")
 
-# test_paths = choices(paths, k=1000)
+# seed("Blooming in the mud by Wolpis Carter")
+# test_paths = choices(paths, k=20)
 
 volcano_numbers = []
 names = []
@@ -27,10 +27,7 @@ longitudes = []
 summit_elevations_meters = []
 summit_elevations_feet = []
 
-# "../data/volcano_pages/243061.html"
-test_paths = [join("..", "data", "volcano_pages", "355130.html")]
-
-for path in test_paths:
+for path in paths:
     with open(path, "r") as file:
         soup = BeautifulSoup(
             markup=file,
@@ -44,9 +41,13 @@ for path in test_paths:
         names.append(str(soup.select("div.volcano-title-container > h3")[0].string))
 
         li_tags = soup.select("div.volcano-info-table > ul")[0]("li")
-        countries.append(str(li_tags[0].string))
         primary_volcano_types.append(str(li_tags[1].string))
         last_known_eruptions.append(str(li_tags[2].string))
+
+        if li_tags[0].string is not None:
+            countries.append(str(li_tags[0].string))
+        else:
+            countries.append(str("".join(li_tags[0].strings)))
 
         li_tags = soup.select("div.volcano-subinfo-table > ul")[0]("li")
         latitudes.append(str(li_tags[0].string))
@@ -68,9 +69,10 @@ dictionary = {
     "summit_elevation_meters": summit_elevations_meters,
     "summit_elevation_feet": summit_elevations_feet,
 }
-
 df = pl.DataFrame(dictionary)
-path = join("..", "data", "profiles.tsv")
 
-test_path = join("..", "data", "test_profiles.tsv")
-df.write_csv(test_path, sep="\t")
+path = join("..", "data", "profiles.tsv")
+df.write_csv(path, sep="\t")
+
+# if __name__ == "__main__":
+#     print("hewo")
