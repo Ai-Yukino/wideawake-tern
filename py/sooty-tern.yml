@@ -10,3 +10,4 @@ dependencies:
   - pandas=1.4.3
   - python-duckdb=0.4.0
   - polars=0.13.58
+  - bpython
