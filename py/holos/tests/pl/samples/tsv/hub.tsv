@@ -1,4 +1,5 @@
 volcano_number	url	name	subregion	volcano_type	evidence
+213010	https://volcano.si.edu/volcano.cfm?vn=213010	Erciyes Dagi	Turkey	Stratovolcano	Eruption Dated
 214080	https://volcano.si.edu/volcano.cfm?vn=214080	Vaiyots-Sar	Western Asia	Pyroclastic cone(s)	Eruption Dated
 221291	https://volcano.si.edu/volcano.cfm?vn=221291	Bilate River Field	Africa (northeastern) and Red Sea	Maar(s)	Unrest / Holocene
 233015	https://volcano.si.edu/volcano.cfm?vn=233015	Vakinankaratra	Indian Ocean (western)	Pyroclastic cone(s)	Evidence Credible
@@ -13,4 +14,8 @@ volcano_number	url	name	subregion	volcano_type	evidence
 284141	https://volcano.si.edu/volcano.cfm?vn=284141	Ahyi	Izu, Volcano, and Mariana Islands	Submarine	Eruption Dated
 284305	https://volcano.si.edu/volcano.cfm?vn=284305	Mariana Back-Arc Segment at 15.5°N	Izu, Volcano, and Mariana Islands	Submarine	Eruption Dated
 290041	https://volcano.si.edu/volcano.cfm?vn=290041	Moekeshiwan [Lvinaya Past]	Kuril Islands	Stratovolcano	Eruption Dated
+312150	https://volcano.si.edu/volcano.cfm?vn=312150	Mageik	Alaska Peninsula	Stratovolcano	Eruption Dated
 327120	https://volcano.si.edu/volcano.cfm?vn=327120	Zuni-Bandera	USA (New Mexico)	Volcanic field	Eruption Dated
+332040	https://volcano.si.edu/volcano.cfm?vn=332040	Hualalai	Hawaiian Islands	Shield(s)	Eruption Observed
+344131	https://volcano.si.edu/volcano.cfm?vn=344131	Esteli	Nicaragua	Fissure vent(s)	Evidence Uncertain
+373100	https://volcano.si.edu/volcano.cfm?vn=373100	Tjornes Fracture Zone	Iceland (northeastern)	Submarine	Eruption Observed
