@@ -64,6 +64,14 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 
 - [CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
 
+### leaflet docs
+
+- [Map](https://leafletjs.com/reference.html)
+
+### Vue Router docs
+
+- [Getting Started](https://router.vuejs.org/guide/)
+
 ### Stack Overflow
 
 - [Build a list of list efficiently in python](https://stackoverflow.com/questions/23040784/build-a-list-of-list-efficiently-in-python)
