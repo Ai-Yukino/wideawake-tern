@@ -80,3 +80,4 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 - [calmcode.io](https://calmcode.io)
   - [decorators](https://calmcode.io/decorators/introduction.html)
   - [\*args \*\*kwargs](https://calmcode.io/args-kwargs/introduction.html)
+- [Building an interactive map with Vue and Leaflet | LogRocket](https://blog.logrocket.com/building-an-interactive-map-with-vue-and-leaflet/)
