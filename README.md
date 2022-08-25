@@ -72,6 +72,10 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 
 - [Getting Started](https://router.vuejs.org/guide/)
 
+### Pinia
+
+- [Introduction](https://pinia.vuejs.org/introduction.html)
+
 ### Stack Overflow
 
 - [Build a list of list efficiently in python](https://stackoverflow.com/questions/23040784/build-a-list-of-list-efficiently-in-python)
