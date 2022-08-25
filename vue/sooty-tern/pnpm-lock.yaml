@@ -6,6 +6,7 @@ specifiers:
   eslint: ^8.21.0
   eslint-plugin-vue: ^9.3.0
   jsdom: ^20.0.0
+  leaflet: ^1.8.0
   pinia: ^2.0.17
   vite: ^3.0.4
   vitest: ^0.21.0
@@ -13,6 +14,7 @@ specifiers:
   vue-router: ^4.1.3
 
 dependencies:
+  leaflet: 1.8.0
   pinia: 2.0.20_vue@3.2.37
   vue: 3.2.37
   vue-router: 4.1.4_vue@3.2.37
@@ -1163,6 +1165,10 @@ packages:
   /json-stable-stringify-without-jsonify/1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
     dev: true
+
+  /leaflet/1.8.0:
+    resolution: {integrity: sha512-gwhMjFCQiYs3x/Sf+d49f10ERXaEFCPr+nVTryhAW8DWbMGqJqt9G4XuIaHmFW08zYvhgdzqXGr8AlW8v8dQkA==}
+    dev: false
 
   /levn/0.3.0:
     resolution: {integrity: sha512-0OO4y2iOHix2W6ujICbKIaEQXvFQHue65vUG3pb5EUomzPI90z9hsA1VsO/dbIIpC53J8gxM9Q4Oho0jrCM/yA==}
