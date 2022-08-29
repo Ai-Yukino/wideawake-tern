@@ -12,7 +12,6 @@ from polars.testing import assert_frame_equal
 # 🐍 Local module imports
 # None
 
-
 def assert_frame_subset(left, right) -> None:
     """
     Raise detailed AssertionError if `left` is not a subset of `right`.
@@ -25,9 +24,25 @@ def assert_frame_subset(left, right) -> None:
         the supposed superset dataframe
     """
 
-    assert_frame_equal(
-        left.join(right, on=left.columns, how="anti"),
-        pl.DataFrame(
-            columns=[(name, t) for (name, t) in zip(left.columns, left.dtypes)]
-        ).lazy(),
-    )
+    difference = left.join(right, on=left.columns, how="anti")
+    skeleton = pl.DataFrame(
+        columns=[(name, t) for (name, t) in zip(left.columns, left.dtypes)]
+    ).lazy()
+
+    assert_frame_equal(difference, skeleton)
+
+def print_col(lf, col) -> None:
+    """
+    Print all values from the column of `lf` specified by `col`
+
+    Parameters
+    ----------
+    lf
+        lazy frame
+    col
+        column name
+    """
+
+    ser = lf.select(col).collect()
+    for i in range(0, ser.shape[0]):
+        print(ser[i, 0])
