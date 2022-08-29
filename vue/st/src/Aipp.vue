@@ -5,6 +5,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
 const center = $ref([31.593, 130.657]);
+
 const tileLayers = {
   OpenStreetMap: {
     url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
