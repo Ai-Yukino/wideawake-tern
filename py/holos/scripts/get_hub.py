@@ -14,21 +14,26 @@ from ai.get import get_page
 base_url = "https://volcano.si.edu"
 base_name = "hub"
 
-# 🌸 Create data directory
+# 🌸 Create directories
 data_directory = join("..", "data")
+html_directory = join(data_directory, "html")
+tsv_directory = join(data_directory, "tsv")
 
-if exists(data_directory) == False:
-    makedirs(data_directory)
+if exists(html_directory) == False:
+    makedirs(html_directory)
+
+if exists(tsv_directory) == False:
+    makedirs(tsv_directory)
 
 # ❄ Save html file
 html_url = join(base_url, "volcanolist_holocene.cfm")
 html_filename = base_name
-html_path = join(data_directory, html_filename + ".html")
+html_path = join(html_directory, html_filename + ".html")
 
 if exists(html_path) == False:
     get_page(
         url=html_url,
-        directory=data_directory,
+        directory=html_directory,
         filename=html_filename,
     )
 
@@ -66,7 +71,7 @@ dictionary = {
 }
 df = pl.DataFrame(dictionary)
 
-tsv_path = join(data_directory, base_name + ".tsv")
+tsv_path = join(tsv_directory, base_name + ".tsv")
 
 if exists(tsv_path) == False:
     df.write_csv(tsv_path, sep="\t")

@@ -69,9 +69,9 @@ def parse_profiles(paths):
             "summit_elevation_meters": summit_elevations_meters,
             "summit_elevation_feet": summit_elevations_feet,
         }
-    ).write_csv(join("..", "data", "profiles.tsv"), sep="\t")
+    ).write_csv(join("..", "data", "tsv", "profiles.tsv"), sep="\t")
 
 
 if __name__ == "__main__":
-    paths = glob(join("..", "data", "volcano_pages", "*"))
+    paths = glob(join("..", "data", "html", "volcano_pages", "*"))
     parse_profiles(paths)
