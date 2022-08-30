@@ -12,6 +12,7 @@ from polars.testing import assert_frame_equal
 # 🐍 Local module imports
 # None
 
+
 def assert_frame_subset(left, right) -> None:
     """
     Raise detailed AssertionError if `left` is not a subset of `right`.
@@ -30,6 +31,7 @@ def assert_frame_subset(left, right) -> None:
     ).lazy()
 
     assert_frame_equal(difference, skeleton)
+
 
 def print_col(lf, col) -> None:
     """
