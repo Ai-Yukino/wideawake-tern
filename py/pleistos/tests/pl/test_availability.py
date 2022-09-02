@@ -17,11 +17,11 @@ class TestHub(unittest.TestCase):
         self.samples = pl.scan_csv(join("samples", "tsv", "availability.tsv"), sep="\t")
 
     def test_shape(self):
-        self.assertEqual(self.profiles.collect().shape, (1331, 9))
+        self.assertEqual(self.availability.collect().shape, (1331, 9))
 
     def test_subset(self):
         self.assertEqual(
-            assert_frame_subset(self.samples, self.profiles),
+            assert_frame_subset(self.samples, self.availability),
             None,
         )
 
