@@ -3,8 +3,6 @@ from os.path import join
 from glob import glob
 from re import search
 
-# from random import sample, seed, choices
-
 # 🐍 External libraries
 from bs4 import BeautifulSoup, SoupStrainer
 import polars as pl
@@ -72,7 +70,4 @@ def parse_availability(paths):
 
 if __name__ == "__main__":
     paths = glob(join("..", "data", "html", "volcano_pages", "*"))
-
-    # seed("Rubber Human")
-    # sample_paths = choices(paths, k=10)
     parse_availability(paths)
