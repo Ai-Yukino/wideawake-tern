@@ -3,7 +3,7 @@ from os.path import join
 from glob import glob
 from re import search
 
-from random import seed, choices
+from random import sample, seed, choices
 
 # 🐍 External libraries
 from bs4 import BeautifulSoup, SoupStrainer
@@ -37,7 +37,7 @@ def parse_availability(paths):
             file.close()
 
         has_eruptive_history = int(
-            len(tables.select("table[title='Eruption history table for this volcanoi']"))
+            len(tables.select("table[title='Eruption history table for this volcano']"))
             > 0
         )
         eruptive_history.append(has_eruptive_history)
@@ -59,6 +59,8 @@ def parse_availability(paths):
 if __name__ == "__main__":
     paths = glob(join("..", "data", "html", "volcano_pages", "*"))
 
-    seed("春はゆ")
+    seed("Rubber Human")
     sample_paths = choices(paths, k=1)
+    for path in sample_paths:
+        print(path)
     # parse_availability(sample_paths)
