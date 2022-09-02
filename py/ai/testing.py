@@ -33,11 +33,13 @@ def assert_frame_subset(left, right) -> None:
     assert_frame_equal(difference, skeleton)
 
 
-def print_col(lf, col, sample_size=None, seed_value="uwu") -> None:
+def print_col(lf, col, sample_size=None, seed_value="uwu", path=None) -> None:
     """
     Print values from the column of `lf` specified by `col`;
     If `sample_size` is specified, then only `sample_size` many
     values are sampled using `seed` and printed out.
+    If `path` is specified, then the values are saved to a
+    tsv file  at `path`
 
     Parameters
     ----------
@@ -49,6 +51,8 @@ def print_col(lf, col, sample_size=None, seed_value="uwu") -> None:
         number of samples
     seed_value
         value to use as a random seed
+    path
+        file path to write values to
     """
 
     ser = lf.select(col).collect()
@@ -60,3 +64,10 @@ def print_col(lf, col, sample_size=None, seed_value="uwu") -> None:
 
     for i in indices:
         print(ser[i, 0])
+
+    if path is not None:
+        with open(path, "x") as file:
+            file.write("values:\n")
+            for i in indices:
+                file.write(f"{ser[i, 0]}\n")
+            file.close()
