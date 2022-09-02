@@ -83,6 +83,7 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 - [Build a list of list efficiently in python](https://stackoverflow.com/questions/23040784/build-a-list-of-list-efficiently-in-python)
 - [Check if pandas dataframe is subset of other dataframe](https://stackoverflow.com/a/49531052)
 - [Getting computer's UTC offset in Python](https://stackoverflow.com/a/3168394)
+- [Add all files using git add except one directory](https://stackoverflow.com/questions/50316434/add-all-files-using-git-add-except-one-directory)
 
 ### Miscellaneous
 
