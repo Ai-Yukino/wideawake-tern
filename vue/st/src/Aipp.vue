@@ -19,13 +19,18 @@ const tileLayers = {
 
 const tileLayerOptions = { zoom: 13, maxZoom: 19 };
 
+const aira = { main: [31.593, 130.657] };
+
 // ❄ Methods
 function setupLeafletMap() {
   const mapDiv = L.map("map").setView(center, 13);
+
   L.tileLayer(tileLayers.OpenStreetMap.url, {
     maxZoom: tileLayerOptions.maxZoom,
     attribution: tileLayers.attribution,
   }).addTo(mapDiv);
+
+  L.marker([31.593, 130.657]).addTo(mapDiv);
 }
 
 // 🌸 Lifecycle hooks
