@@ -29,33 +29,18 @@ def parse_availability(paths):
         volcano_numbers.append(int(search(r"\d+", path)[0]))
 
         with open(path, "r") as file:
-            soup = BeautifulSoup(
+            tables = BeautifulSoup(
                 markup=file,
                 features="lxml",
-                parse_only=SoupStrainer(
-                    name="table",
-                    attrs={
-                        "class": "DivTable",
-                        "title": "Eruption history table for this volcano",
-                    },
-                ),
+                parse_only=SoupStrainer(name="table", attrs={"class": "DivTable"}),
             )
             file.close()
-        eruptive_history.append(int(len(soup) > 1))
 
-        with open(path, "r") as file:
-            soup = BeautifulSoup(
-                markup=file,
-                features="lxml",
-                parse_only=SoupStrainer(
-                    name="table",
-                    attrs={
-                        "class": "DivTable",
-                        "title": "Eruption history table for this volcano",
-                    },
-                ),
-            )
-            file.close()
+        has_eruptive_history = int(
+            len(tables.select("table[title='Eruption history table for this volcanoi']"))
+            > 0
+        )
+        eruptive_history.append(has_eruptive_history)
 
     # ❄ Export tsv file
     pl.DataFrame(
@@ -76,7 +61,4 @@ if __name__ == "__main__":
 
     seed("春はゆ")
     sample_paths = choices(paths, k=1)
-    for path in sample_paths:
-        print(path)
-
-    # parse_availability(paths)
+    # parse_availability(sample_paths)
