@@ -1,6 +1,7 @@
 # 🐍 Python standard library
 from os.path import join
 from glob import glob
+from re import search
 
 from random import seed, choices
 
@@ -16,7 +17,7 @@ from ai.logging import timer
 def parse_availability(paths):
     # ❄ Set up columns
     volcano_numbers = []
-    eruption_history = []
+    eruptive_history = []
     synonyms = []
     cones = []
     craters = []
@@ -33,16 +34,19 @@ def parse_availability(paths):
             )
             file.close()
 
+        volcano_number = int(search(r"\d+", path)[0])
+        volcano_numbers.append(volcano_number)
+
     # ❄ Export tsv file
     pl.DataFrame(
         {
             "volcano_number": volcano_numbers,
-            "eruption_history": eruption_history,
+            "eruptive_history": eruptive_history,
             "synonyms": synonyms,
             "cones": cones,
             "craters": craters,
             "domes": domes,
-            "thermal": thermal
+            "thermal": thermal,
         }
     ).write_csv(join("..", "data", "tsv", "availability.tsv"), sep="\t")
 
@@ -52,4 +56,7 @@ if __name__ == "__main__":
 
     seed("zutomayo - study me")
     sample_paths = choices(paths, k=1)
-    parse_availability(paths)
+    for path in sample_paths:
+        print(int(search(r"\d+", path)[0]))
+
+    # parse_availability(paths)
