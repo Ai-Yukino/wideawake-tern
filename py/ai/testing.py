@@ -3,7 +3,7 @@ Utilities functions to assist with unit tests
 """
 
 # 🐍 Python standard library
-# None
+from random import seed, choices
 
 # 🐍 External libraries
 import polars as pl
@@ -33,18 +33,48 @@ def assert_frame_subset(left, right) -> None:
     assert_frame_equal(difference, skeleton)
 
 
-def print_col(lf, col) -> None:
+def print_col(table, col=None, n=None, s="uwu", path=None) -> None:
     """
-    Print all values from the column of `lf` specified by `col`
+    Print values from the column of `table` specified by `col`;
+    If `k` is specified, then only `k` many values are sampled
+    using `seed` and printed out.
+    If `path` is specified, then the values are saved to a
+    tsv file at `path`.
 
     Parameters
     ----------
-    lf
-        lazy frame
+    table
+        Polars LazyFrame, Polars DataFrame, or path to tsv file
     col
         column name
+    n
+        number of samples
+    s
+        random seed
+    path
+        file path to write values to
     """
+    if type(table) is str:
+        lf = pl.scan_csv(table, sep="\t")
+    elif type(table) is pl.DataFrame:
+        lf = table.lazy()
+
+    if col is None:
+        col = lf.columns[0]
 
     ser = lf.select(col).collect()
-    for i in range(0, ser.shape[0]):
+    if n is not None:
+        seed(s)
+        indices = choices(range(0, ser.shape[0]), k=n)
+    else:
+        indices = range(0, ser.shape[0])
+
+    for i in indices:
         print(ser[i, 0])
+
+    if path is not None:
+        with open(path, "x") as file:
+            file.write("values:\n")
+            for i in indices:
+                file.write(f"{ser[i, 0]}\n")
+            file.close()
