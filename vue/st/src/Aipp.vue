@@ -19,7 +19,7 @@ const tileLayers = {
 
 const tileLayerOptions = { zoom: 13, maxZoom: 19 };
 
-const aira = { main: [31.593, 130.657] };
+const aira = { profile: [31.593, 130.657] };
 
 // ❄ Methods
 function setupLeafletMap() {
