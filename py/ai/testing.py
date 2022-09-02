@@ -3,7 +3,7 @@ Utilities functions to assist with unit tests
 """
 
 # 🐍 Python standard library
-# None
+from random import seed, choices
 
 # 🐍 External libraries
 import polars as pl
@@ -33,9 +33,11 @@ def assert_frame_subset(left, right) -> None:
     assert_frame_equal(difference, skeleton)
 
 
-def print_col(lf, col) -> None:
+def print_col(lf, col, sample_size=None, seed_value="uwu") -> None:
     """
-    Print all values from the column of `lf` specified by `col`
+    Print values from the column of `lf` specified by `col`;
+    If `sample_size` is specified, then only `sample_size` many
+    values are sampled using `seed` and printed out.
 
     Parameters
     ----------
@@ -43,8 +45,18 @@ def print_col(lf, col) -> None:
         lazy frame
     col
         column name
+    sample_size
+        number of samples
+    seed_value
+        value to use as a random seed
     """
 
     ser = lf.select(col).collect()
-    for i in range(0, ser.shape[0]):
+    if sample_size is not None:
+        seed(seed_value)
+        indices = choices(range(0, ser.shape[0]), k=sample_size)
+    else:
+        indices = range(0, ser.shape[0])
+
+    for i in indices:
         print(ser[i, 0])
