@@ -33,7 +33,7 @@ def assert_frame_subset(left, right) -> None:
     assert_frame_equal(difference, skeleton)
 
 
-def print_col(lf, col, sample_size=None, seed_value="uwu", path=None) -> None:
+def print_col(lf, col=None, sample_size=None, seed_value="uwu", path=None) -> None:
     """
     Print values from the column of `lf` specified by `col`;
     If `sample_size` is specified, then only `sample_size` many
@@ -54,6 +54,8 @@ def print_col(lf, col, sample_size=None, seed_value="uwu", path=None) -> None:
     path
         file path to write values to
     """
+    if col is None:
+        col = lf.columns[0]
 
     ser = lf.select(col).collect()
     if sample_size is not None:
