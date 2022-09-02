@@ -33,9 +33,9 @@ def assert_frame_subset(left, right) -> None:
     assert_frame_equal(difference, skeleton)
 
 
-def print_col(lf, col=None, n=None, s="uwu", path=None) -> None:
+def print_col(table, col=None, n=None, s="uwu", path=None) -> None:
     """
-    Print values from the column of `lf` specified by `col`;
+    Print values from the column of `table` specified by `col`;
     If `k` is specified, then only `k` many values are sampled
     using `seed` and printed out.
     If `path` is specified, then the values are saved to a
@@ -43,8 +43,8 @@ def print_col(lf, col=None, n=None, s="uwu", path=None) -> None:
 
     Parameters
     ----------
-    lf
-        lazy frame
+    table
+        Polars LazyFrame, Polars DataFrame, or path to tsv file
     col
         column name
     n
@@ -54,6 +54,11 @@ def print_col(lf, col=None, n=None, s="uwu", path=None) -> None:
     path
         file path to write values to
     """
+    if type(table) is str:
+        lf = pl.scan_csv(table, sep="\t")
+    elif type(table) is pl.DataFrame:
+        lf = table.lazy()
+
     if col is None:
         col = lf.columns[0]
 
