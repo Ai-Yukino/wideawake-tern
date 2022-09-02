@@ -1,1 +1,13 @@
-volcano_number	eruption_history	volcano_names	cones	craters	domes	thermal
+volcano_number	eruption_history	synonyms	cones	craters	domes	thermal
+283030	1	1	1	1	0	0
+321050	1	1	0	0	1	1
+282080	1	0	1	1	1	0
+333050	1	0	0	0	0	0
+332000	1	1	0	0	0	0
+372010	1	0	1	1	0	0
+390140	1	0	1	0	0	0
+282010	1	1	0	0	0	0
+320031	0	1	1	0	0	0
+275020	0	1	1	0	0	0
+326010	0	1	1	1	0	0
+221251	0	0	0	0	0	0
