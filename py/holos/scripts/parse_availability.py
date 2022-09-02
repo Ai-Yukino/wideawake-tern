@@ -36,11 +36,25 @@ def parse_availability(paths):
             )
             file.close()
 
-        has_eruptive_history = int(
-            len(tables.select("table[title='Eruption history table for this volcano']"))
-            > 0
+        has_eruptive_history = len(
+            tables.select("table[title='Eruption history table for this volcano']")
         )
         eruptive_history.append(has_eruptive_history)
+
+        has_synonyms = len(tables("h5", string="Synonyms"))
+        synonyms.append(has_synonyms)
+
+        has_cones = len(tables("h5", string="Cones"))
+        cones.append(has_cones)
+
+        has_craters = len(tables("h5", string="Craters"))
+        craters.append(has_craters)
+
+        has_domes = len(tables("h5", string="Domes"))
+        domes.append(has_domes)
+
+        has_thermal = len(tables("h5", string="Thermal"))
+        thermal.append(has_thermal)
 
     # ❄ Export tsv file
     pl.DataFrame(
@@ -60,7 +74,5 @@ if __name__ == "__main__":
     paths = glob(join("..", "data", "html", "volcano_pages", "*"))
 
     seed("Rubber Human")
-    sample_paths = choices(paths, k=1)
-    for path in sample_paths:
-        print(path)
-    # parse_availability(sample_paths)
+    sample_paths = choices(paths, k=10)
+    parse_availability(sample_paths)
