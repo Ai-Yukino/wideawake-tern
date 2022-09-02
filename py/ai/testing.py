@@ -33,13 +33,13 @@ def assert_frame_subset(left, right) -> None:
     assert_frame_equal(difference, skeleton)
 
 
-def print_col(lf, col=None, sample_size=None, seed_value="uwu", path=None) -> None:
+def print_col(lf, col=None, n=None, s="uwu", path=None) -> None:
     """
     Print values from the column of `lf` specified by `col`;
-    If `sample_size` is specified, then only `sample_size` many
-    values are sampled using `seed` and printed out.
+    If `k` is specified, then only `k` many values are sampled
+    using `seed` and printed out.
     If `path` is specified, then the values are saved to a
-    tsv file  at `path`
+    tsv file at `path`.
 
     Parameters
     ----------
@@ -47,10 +47,10 @@ def print_col(lf, col=None, sample_size=None, seed_value="uwu", path=None) -> No
         lazy frame
     col
         column name
-    sample_size
+    n
         number of samples
-    seed_value
-        value to use as a random seed
+    s
+        random seed
     path
         file path to write values to
     """
@@ -58,9 +58,9 @@ def print_col(lf, col=None, sample_size=None, seed_value="uwu", path=None) -> No
         col = lf.columns[0]
 
     ser = lf.select(col).collect()
-    if sample_size is not None:
-        seed(seed_value)
-        indices = choices(range(0, ser.shape[0]), k=sample_size)
+    if n is not None:
+        seed(s)
+        indices = choices(range(0, ser.shape[0]), k=n)
     else:
         indices = range(0, ser.shape[0])
 
