@@ -74,7 +74,9 @@ def parse_availability(paths):
 if __name__ == "__main__":
     paths = glob(join("..", "data", "html", "volcano_pages", "*"))
 
-    seed("zutomayo - study me")
+    seed("春はゆ")
     sample_paths = choices(paths, k=1)
+    for path in sample_paths:
+        print(path)
 
     # parse_availability(paths)
