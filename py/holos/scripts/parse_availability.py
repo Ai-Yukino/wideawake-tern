@@ -3,7 +3,7 @@ from os.path import join
 from glob import glob
 from re import search
 
-from random import seed, choices
+from random import sample, seed, choices
 
 # 🐍 External libraries
 from bs4 import BeautifulSoup, SoupStrainer
@@ -26,16 +26,35 @@ def parse_availability(paths):
 
     # 🌸 Get column data for each page
     for path in paths:
+        volcano_numbers.append(int(search(r"\d+", path)[0]))
+
         with open(path, "r") as file:
-            soup = BeautifulSoup(
+            tables = BeautifulSoup(
                 markup=file,
                 features="lxml",
-                parse_only=SoupStrainer(),
+                parse_only=SoupStrainer(name="table", attrs={"class": "DivTable"}),
             )
             file.close()
 
-        volcano_number = int(search(r"\d+", path)[0])
-        volcano_numbers.append(volcano_number)
+        has_eruptive_history = len(
+            tables.select("table[title='Eruption history table for this volcano']")
+        )
+        eruptive_history.append(has_eruptive_history)
+
+        has_synonyms = len(tables("h5", string="Synonyms"))
+        synonyms.append(has_synonyms)
+
+        has_cones = len(tables("h5", string="Cones"))
+        cones.append(has_cones)
+
+        has_craters = len(tables("h5", string="Craters"))
+        craters.append(has_craters)
+
+        has_domes = len(tables("h5", string="Domes"))
+        domes.append(has_domes)
+
+        has_thermal = len(tables("h5", string="Thermal"))
+        thermal.append(has_thermal)
 
     # ❄ Export tsv file
     pl.DataFrame(
@@ -54,9 +73,6 @@ def parse_availability(paths):
 if __name__ == "__main__":
     paths = glob(join("..", "data", "html", "volcano_pages", "*"))
 
-    seed("zutomayo - study me")
-    sample_paths = choices(paths, k=1)
-    for path in sample_paths:
-        print(int(search(r"\d+", path)[0]))
-
-    # parse_availability(paths)
+    seed("Rubber Human")
+    sample_paths = choices(paths, k=10)
+    parse_availability(sample_paths)
