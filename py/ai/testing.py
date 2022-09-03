@@ -100,5 +100,37 @@ def z(s) -> int:
     """
 
     s = s.encode()
-    s = int.from_bytes(s + _sha512(s).digest(), 'big')
-    return s % 2 ** 64
+    s = int.from_bytes(s + _sha512(s).digest(), "big")
+    return s % 2**64
+
+
+def sample_table(table, n, s, path=None) -> pl.DataFrame:
+    """
+    Randomly samples `n` rows from `table`
+    using the random seed `s`;
+    If `path` is specified then a
+    tsv file will be written at that path.
+
+    Parameters
+    ----------
+    table
+        Polars LazyFrame, Polars DataFrame, or path to tsv file
+    n
+        number of rowsa to sample
+    s
+        random seed
+    path
+        path to output file
+    """
+
+    if type(table) is str:
+        df = pl.read_csv(table, sep="\t")
+    elif type(table) is pl.LazyFrame:
+        df = table.collect()
+
+    df = df.sample(n=n, seed=z(s))
+
+    if path is not None:
+        df.write_csv(path, sep="\t")
+
+    return df
