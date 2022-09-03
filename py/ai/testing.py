@@ -90,15 +90,15 @@ def print_col(table, col=None, n=None, s="uwu", path=None) -> None:
 
 def z(s) -> int:
     """
-    Converts a string `s` to an integer;
-    taken from `seed()` in the standard
-    random library
+    Converts a string `s` to
+    an unsigned 64 bit integer
 
     Parameters
     ----------
     s
-        string to be converted to an integer
+        string to be converted to an unsigned 64 bit integer
     """
+
     s = s.encode()
-    s = int.from_bytes(s + _sha512(s).digest(), "big")
-    return s
+    s = int.from_bytes(s + _sha512(s).digest(), 'big')
+    return s % 2 ** 64
