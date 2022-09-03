@@ -5,6 +5,13 @@ Utilities functions to assist with unit tests
 # 🐍 Python standard library
 from random import seed, choices
 
+try:
+    # hashlib is pretty heavy to load, try lean internal module first
+    from _sha512 import sha512 as _sha512
+except ImportError:
+    # fallback to official implementation
+    from hashlib import sha512 as _sha512
+
 # 🐍 External libraries
 import polars as pl
 from polars.testing import assert_frame_equal
@@ -54,6 +61,7 @@ def print_col(table, col=None, n=None, s="uwu", path=None) -> None:
     path
         file path to write values to
     """
+
     if type(table) is str:
         lf = pl.scan_csv(table, sep="\t")
     elif type(table) is pl.DataFrame:
@@ -78,3 +86,19 @@ def print_col(table, col=None, n=None, s="uwu", path=None) -> None:
             for i in indices:
                 file.write(f"{ser[i, 0]}\n")
             file.close()
+
+
+def z(s) -> int:
+    """
+    Converts a string `s` to
+    an unsigned 64 bit integer
+
+    Parameters
+    ----------
+    s
+        string to be converted to an unsigned 64 bit integer
+    """
+
+    s = s.encode()
+    s = int.from_bytes(s + _sha512(s).digest(), 'big')
+    return s % 2 ** 64
