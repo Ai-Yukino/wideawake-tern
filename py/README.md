@@ -24,55 +24,65 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 
 ## 🌸 Script inputs and outputs
 
-### 📁 `holos/scripts`
+### 📁 `holos/scripts` and `pleistos/scripts`
 
 #### 👩‍💻 `get_hub.py`
 
-- Input: **nothing**
+- Input:
+  - **nothing**
 - Output:
   - Folders:
-    - `holos/data/tsv`
-    - `holos/data/html/`
+    - `/data/tsv/`
+    - `/data/html/`
   - Files:
-    - `holos/data/tsv/hub.tsv`
-    - `holos/data/html/hub.html`
+    - `/data/tsv/hub.tsv`
+    - `/data/tsv/hub.tsv`
 
-#### 👩‍💻 `get_volcanoe_pages.py`
+#### 👩‍💻 `get_volcano_pages.py`
 
 - Input:
-  - Folder: `holos/data/tsv/hub.tsv`
+  - File:
+    - `/data/tsv/hub.tsv`
 - Output:
-  - Folder: `holos/data/html/volcano_pages`
-  - Files: `{volcano id}.html`
+  - Folder:
+    - `/data/html/volcano_pages`
+  - Files:
+    - `/data/html/volcano_pages/{volcano id}.html`
 
 #### 👩‍💻 `parse_profiles.py`
 
 - Input:
-  - Folder: `holos/data/html/volcano_pages/`
-  - Files: `{volcano id}.html`
+  - File:
+    - `/data/html/volcano_pages/{volcano id}.html`
 - Output:
-  - Folder: `holos/data/tsv/`
-  - File: `profiles.tsv`
+  - File:
+    - `/data/tsv/profiles.tsv`
 
 ### 👩‍💻 `parse_availability.py`
 
 - Input:
-  - Folder: `holos/data/html/volcano_pages/`
-  - File: `{volcano id}.html`
+  - File:
+    - `/data/html/volcano_pages/{volcano id}.html`
 - Output:
-  - Folder: `holos`
-
-### 📁 `pleistos/scripts`
+  - File:
+    - `/data/tsv/availability.tsv`
 
 ## ❄ Script run order
 
-## 🌸 Data
+First, run
 
-- [Global Volcanism Program](https://volcano.si.edu/)
-  - [Holocene Volcano List](https://volcano.si.edu/volcanolist_holocene.cfm)
-  - [Pleistocene Volano List](https://volcano.si.edu/volcanolist_pleistocene.cfm)
-  - [Database updates](https://volcano.si.edu/gvp_votw.cfm#log)
+```
+get_hub.py -> get_volcano_pages.pys
+```
 
-## ❄ Reading
+Then you can run either
 
-- [How to Pass Arguments to a Python Script from the Command Line | OpenSourceOptions](https://opensourceoptions.com/blog/how-to-pass-arguments-to-a-python-script-from-the-command-line/)
+```
+parse_profiles
+```
+
+or
+
+```
+parse_availability
+```
