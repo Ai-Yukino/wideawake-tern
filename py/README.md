@@ -24,6 +24,32 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 
 ## 🌸 Script inputs and outputs
 
+### 📁 `holos/scripts`
+
+#### 👩‍💻 `get_hub.py`
+
+- Input: nothing
+- Output:
+  - Folder: `holos/data/tsv/`
+  - File: `hub.tsv`
+
+#### 👩‍💻 `get_volcanoe_pages.py`
+
+- Input:
+  - Folder: `holos/data/tsv/`
+  - Input: `hub.tsv`
+- Output:
+  - Folder: `holos/data/html/volcano_pages`
+  - Files: `{volcano id}.html`
+
+#### `parse_profiles.py`
+
+- Input:
+  - Folder: `holos/data/html/volcano_pages/`
+  - File: `{volcano id}.html
+
+### 📁 `pleistos/scripts`
+
 ## ❄ Script run order
 
 ## 🌸 Data
