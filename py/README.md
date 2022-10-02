@@ -28,25 +28,39 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
 
 #### 👩‍💻 `get_hub.py`
 
-- Input: nothing
+- Input: **nothing**
 - Output:
-  - Folder: `holos/data/tsv/`
-  - File: `hub.tsv`
+  - Folders:
+    - `holos/data/tsv`
+    - `holos/data/html/`
+  - Files:
+    - `holos/data/tsv/hub.tsv`
+    - `holos/data/html/hub.html`
 
 #### 👩‍💻 `get_volcanoe_pages.py`
 
 - Input:
-  - Folder: `holos/data/tsv/`
-  - Input: `hub.tsv`
+  - Folder: `holos/data/tsv/hub.tsv`
 - Output:
   - Folder: `holos/data/html/volcano_pages`
   - Files: `{volcano id}.html`
 
-#### `parse_profiles.py`
+#### 👩‍💻 `parse_profiles.py`
 
 - Input:
   - Folder: `holos/data/html/volcano_pages/`
-  - File: `{volcano id}.html
+  - Files: `{volcano id}.html`
+- Output:
+  - Folder: `holos/data/tsv/`
+  - File: `profiles.tsv`
+
+### 👩‍💻 `parse_availability.py`
+
+- Input:
+  - Folder: `holos/data/html/volcano_pages/`
+  - File: `{volcano id}.html`
+- Output:
+  - Folder: `holos`
 
 ### 📁 `pleistos/scripts`
 
@@ -58,3 +72,7 @@ to install the local `py/ai` module. See [here](https://goodresearch.dev/setup.h
   - [Holocene Volcano List](https://volcano.si.edu/volcanolist_holocene.cfm)
   - [Pleistocene Volano List](https://volcano.si.edu/volcanolist_pleistocene.cfm)
   - [Database updates](https://volcano.si.edu/gvp_votw.cfm#log)
+
+## ❄ Reading
+
+- [How to Pass Arguments to a Python Script from the Command Line | OpenSourceOptions](https://opensourceoptions.com/blog/how-to-pass-arguments-to-a-python-script-from-the-command-line/)
