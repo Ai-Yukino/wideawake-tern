@@ -16,9 +16,9 @@ from ai.src.logging import timer
 
 
 @timer
-def get_page(url, directory, filename, filename_extension=".html"):
-    """Save a single static web page"""
-    urlretrieve(url, join(directory, filename + filename_extension))
+def save(url, path):
+    """Save the network object at `url` to a local file at `path`."""
+    urlretrieve(url, path)
     urlcleanup()
 
 
