@@ -3,8 +3,8 @@ Utilities functions for dealing with get requests in web scraping
 """
 
 # 🐍 Python standard library
-from urllib.request import urlretrieve, urlcleanup
 from os.path import join
+from urllib.request import urlretrieve, urlcleanup
 import csv
 from random import choices, seed
 
@@ -14,11 +14,13 @@ import requests
 # 🐍 Local modules
 from ai.src.logging import timer
 
+
 @timer
 def get_page(url, directory, filename, filename_extension=".html"):
     """Save a single static web page"""
     urlretrieve(url, join(directory, filename + filename_extension))
     urlcleanup()
+
 
 @timer
 def get_pages(
