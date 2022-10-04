@@ -23,7 +23,7 @@ def save_html(url, dir, name):
 
 
 @timer
-def save_pages(
+def session_save_html(
     urls,
     directory,
     filenames,
