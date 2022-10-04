@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup, SoupStrainer
 import polars as pl
 
 # 🐍 Local module imports
-from ai.src.get import get_page
+from ai.src.get import save_html
 
 
 def get_hub():
