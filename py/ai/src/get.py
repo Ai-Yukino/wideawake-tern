@@ -28,9 +28,9 @@ def session_save_html(
     dir,
     names,
 ):
-    """Use a single persistent HTTP connection to
-    save multiple html pages from `urls` to
-    a local html files `names` at `dir`"""
+    """Use a single persistent HTTP connection
+    to save multiple html pages from `urls` to
+    local html files `names` at `dir`"""
 
     with requests.Session() as s:
         for url, name in zip(urls, names):
