@@ -23,21 +23,13 @@ def save(url, path):
 
 
 @timer
-def get_pages(
+def save_pages(
     urls,
     directory,
     filenames,
     filename_extension=".html",
-    sample_size=-1,
-    sample_seed="uwu",
 ):
-    "Save multiple static web pages"
-
-    if 0 < sample_size < len(urls):
-        seed(sample_seed)
-        sample_indices = choices(range(0, len(urls)), k=sample_size)
-        urls = [urls[index] for index in sample_indices]
-        filenames = [filenames[index] for index in sample_indices]
+    "Save multiple static web pages using a single persistent HTTP connection"
 
     with requests.Session() as s:
         for url, filename in zip(urls, filenames):
