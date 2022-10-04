@@ -6,7 +6,6 @@ Utilities functions for dealing with get requests in web scraping
 from os.path import join
 from urllib.request import urlretrieve, urlcleanup
 import csv
-from random import choices, seed
 
 # 🐍 External libraries
 import requests
@@ -16,9 +15,10 @@ from ai.src.logging import timer
 
 
 @timer
-def save(url, path):
-    """Save the network object at `url` to a local file at `path`."""
-    urlretrieve(url, path)
+def save(url, dir, name):
+    """Save an html page from `url` to
+    a local html file `name` at `dir`."""
+    urlretrieve(url, join(dir, name))
     urlcleanup()
 
 
