@@ -41,11 +41,12 @@ def session_save_html(
                     f.write(r.text)
 
 
-def get_column(path, column_index, sep="\t"):
-    """Get a single column from a csv file ignoring the header row (tsv format by default)"""
+def get_column(path, column_index):
+    """Get a single column from a tsv file
+    ignoring the header row"""
     column = []
-    with open(path, "r") as file:
-        table = csv.reader(file, delimiter=sep)
+    with open(path, "r") as f:
+        table = csv.reader(f, delimiter="\t")
         next(table)
         for row in table:
             column.append(row[column_index])
