@@ -1,5 +1,5 @@
 """
-Utilities functions for dealing with get requests in web scraping
+Utilitiy functions to help with get requests in web scraping
 """
 
 # 🐍 Python standard library
