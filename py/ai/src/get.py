@@ -15,10 +15,10 @@ from ai.src.logging import timer
 
 
 @timer
-def save(url, dir, name):
+def save_html(url, dir, name):
     """Save an html page from `url` to
     a local html file `name` at `dir`."""
-    urlretrieve(url, join(dir, name))
+    urlretrieve(url, join(dir, name + ".html"))
     urlcleanup()
 
 
