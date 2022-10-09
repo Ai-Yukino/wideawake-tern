@@ -1,0 +1,8 @@
+name: sooty-tern
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.6
+  - black=22.8.0
+  - bs4=4.11.1
+  - polars=0.14.17
