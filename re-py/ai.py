@@ -1,4 +1,4 @@
-"""{Name TBA}
+"""Main function
 
 {Description TBA}
 """
