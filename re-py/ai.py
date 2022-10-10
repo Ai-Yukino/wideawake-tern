@@ -4,7 +4,7 @@
 """
 
 ## 🐍 Python standard library
-from time import sleep
+# None
 
 ## 🐍 External packages
 # None
@@ -16,9 +16,6 @@ from time import sleep
 def ai():
     pass
 
-
-## Other functions
-# None
 
 if __name__ == "__main__":
     ai()
