@@ -4,17 +4,23 @@
 """
 
 ## 🐍 Python standard library
-# None
+from os.path import join
+from os import makedirs
 
 ## 🐍 External packages
-# None
+import requests
 
 ## 🐍 Local modules
 # None
 
-## Main function
+## 📝 Main function
 def ai():
-    pass
+    makedirs(join("data", "html"))
+    makedirs(join("data", "tsv"))
+    r = requests.get("https://volcano.si.edu/gvp_votw.cfm")
+    with open(join("data", "html", "db_info.html"), "x") as f:
+        f.write(r.text)
+        f.close()
 
 
 if __name__ == "__main__":
