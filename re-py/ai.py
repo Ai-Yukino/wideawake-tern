@@ -4,27 +4,21 @@
 """
 
 ## 🐍 Python standard library
-# None
+from time import sleep
 
 ## 🐍 External packages
 # None
 
 ## 🐍 Local modules
-from src.yukino import time_this
-
+# None
 
 ## Main function
-@time_this
 def ai():
-    umu()
+    pass
 
 
 ## Other functions
-@time_this
-def umu():
-    print("umu")
-    return "umu"
-
+# None
 
 if __name__ == "__main__":
     ai()
