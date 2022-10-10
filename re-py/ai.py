@@ -15,6 +15,7 @@ import requests
 
 ## 📝 Main function
 def ai():
+    ### 📝 Save "Database Updates" page
     makedirs(join("data", "html"))
     makedirs(join("data", "tsv"))
     r = requests.get("https://volcano.si.edu/gvp_votw.cfm")
