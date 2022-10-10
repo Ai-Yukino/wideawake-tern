@@ -14,13 +14,11 @@ from src.yukino import time_this
 
 
 ## Main function
-@time_this
 def ai():
     umu()
 
 
 ## Other functions
-@time_this
 def umu():
     print("umu")
     return "umu"
