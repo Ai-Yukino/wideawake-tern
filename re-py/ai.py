@@ -10,7 +10,7 @@
 # None
 
 ## 🐍 Local modules
-from src.yukino import time_this
+# None
 
 
 ## Main function
