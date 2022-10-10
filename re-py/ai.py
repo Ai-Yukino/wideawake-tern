@@ -24,6 +24,9 @@ def ai():
     #     f.write(r.text)
     #     f.close()
 
+    ### 📝
+    with open(join("data", "html", "db_info.html"), "r") as f:
+        f.close()
 
 if __name__ == "__main__":
     ai()
