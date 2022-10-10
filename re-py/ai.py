@@ -9,6 +9,7 @@ from os import makedirs
 
 ## 🐍 External packages
 import requests
+from bs4 import BeautifulSoup, SoupStrainer
 
 ## 🐍 Local modules
 # None
@@ -16,12 +17,12 @@ import requests
 ## 📝 Main function
 def ai():
     ### 📝 Save "Database Updates" page
-    makedirs(join("data", "html"))
-    makedirs(join("data", "tsv"))
-    r = requests.get("https://volcano.si.edu/gvp_votw.cfm")
-    with open(join("data", "html", "db_info.html"), "x") as f:
-        f.write(r.text)
-        f.close()
+    # makedirs(join("data", "html"))
+    # makedirs(join("data", "tsv"))
+    # r = requests.get("https://volcano.si.edu/gvp_votw.cfm")
+    # with open(join("data", "html", "db_info.html"), "x") as f:
+    #     f.write(r.text)
+    #     f.close()
 
 
 if __name__ == "__main__":
