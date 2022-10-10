@@ -2,6 +2,7 @@
 *.egg-info
 data
 __pycache__
+.pytest_cache
 
 # LibreOffice Calc
 *.~lock*
