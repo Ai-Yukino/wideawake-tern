@@ -4,7 +4,7 @@
 """
 
 ## 🐍 Python standard library
-# None
+from time import sleep
 
 ## 🐍 External packages
 # None
@@ -12,17 +12,13 @@
 ## 🐍 Local modules
 # None
 
-
 ## Main function
 def ai():
-    umu()
+    pass
 
 
 ## Other functions
-def umu():
-    print("umu")
-    return "umu"
-
+# None
 
 if __name__ == "__main__":
     ai()
