@@ -23,6 +23,7 @@ def ai():
 @time_this
 def umu():
     print("umu")
+    return "umu"
 
 
 if __name__ == "__main__":
