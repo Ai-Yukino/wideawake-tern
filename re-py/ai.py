@@ -4,21 +4,29 @@
 """
 
 ## 🐍 Python standard library
-from time import sleep
+from os.path import join
+from os import makedirs
 
 ## 🐍 External packages
-# None
+import requests
+from bs4 import BeautifulSoup, SoupStrainer
 
 ## 🐍 Local modules
 # None
 
-## Main function
+## 📝 Main function
 def ai():
-    pass
+    ### 📝 Save "Database Updates" page
+    # makedirs(join("data", "html"))
+    # makedirs(join("data", "tsv"))
+    # r = requests.get("https://volcano.si.edu/gvp_votw.cfm")
+    # with open(join("data", "html", "db_info.html"), "x") as f:
+    #     f.write(r.text)
+    #     f.close()
 
-
-## Other functions
-# None
+    ### 📝
+    with open(join("data", "html", "db_info.html"), "r") as f:
+        f.close()
 
 if __name__ == "__main__":
     ai()
