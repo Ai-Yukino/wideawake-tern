@@ -26,10 +26,11 @@ def time_this(f):
         start = time()
         print("\n---")
         print(f"Running {f.__name__}() ...")
-        f(*args, *kwargs)
+        result = f(*args, *kwargs)
         end = time()
 
         print(f"{f.__name__}() ran for {end - start} seconds")
         print("---")
+        return result
 
     return g
