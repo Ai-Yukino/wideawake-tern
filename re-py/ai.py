@@ -26,7 +26,9 @@ def ai():
 
     ### 📝
     with open(join("data", "html", "db_info.html"), "r") as f:
+        soup = BeautifulSoup(markup=f, features="lxml", parse_only=SoupStrainer())
         f.close()
+
 
 if __name__ == "__main__":
     ai()
