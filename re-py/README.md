@@ -36,3 +36,4 @@ to install the local `py/src` package. See [here](https://goodresearch.dev/setup
 ### Other
 
 - [decorators | calmcode.io](https://calmcode.io/decorators/introduction.html)
+- [Panes in Windows Terminal | Microsoft docs](https://learn.microsoft.com/en-us/windows/terminal/panes)
