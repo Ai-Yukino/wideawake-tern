@@ -1,4 +1,6 @@
-# `README.md` for [sooty-tern](https://github.com/Ai-Yukino/sooty-tern)
+# `README.md` for [wideawake-tern](https://github.com/Ai-Yukino/wideawake-tern)
+
+(Old versions of [sooty-tern](https://github.com/Ai-Yukino/sooty-tern))
 
 Volcanoes 🌋
 
